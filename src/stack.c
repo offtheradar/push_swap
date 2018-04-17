@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/16 16:45:43 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/16 19:55:00 by ysibous          ###   ########.fr       */
+/*   Created: 2018/04/16 20:00:23 by ysibous           #+#    #+#             */
+/*   Updated: 2018/04/16 20:01:10 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int				pop(t_stack_node **root)
 	int				popped;
 
 	if (is_empty(*root))
-		return (NULL);
+		return (-1);
 	tmp = *root;
 	*root = (*root)->next;
 	popped = tmp->data;
@@ -91,7 +91,7 @@ void			rot_r(t_stack_node **root)
 	swap(root);
 }
 
-void	push_to_end(t_stack_node *new_l, t_stack_node **lst)
+void			push_to_end(t_stack_node *new_l, t_stack_node **lst)
 {
 	t_stack_node *curr;
 
