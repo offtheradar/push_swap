@@ -6,7 +6,7 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 12:03:49 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/17 16:48:23 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/17 19:36:04 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,15 @@ int		find_pivot(t_stack_node *a)
 	return ((max - min) / 2);
 }
 
-void	quick_sort(t_stack_node **a, int len_a)
+void	quick_sort(t_stack_node **a, t_stack_node **b, int len_a)
 {
 	int				i;
 	int				len_b;
 	int				pivot;
-	t_stack_node	*b;
 
 	if (!(*a) || !((*a)->next))
 		return ;
 	pivot = 2;
-	b = (t_stack_node *)ft_memalloc(sizeof(t_stack_node));
 	len_b = 0;
 	i = 0;
 	while (i < len_a)

@@ -6,7 +6,7 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 16:29:59 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/16 19:47:20 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/17 16:36:43 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,6 @@ void			rot_l(t_stack_node **root);
 void			rot_r(t_stack_node **root);
 
 void			push_to_end(t_stack_node *new_l, t_stack_node **lst);
+
+int				is_sorted(t_stack_node *root);
 #endif
