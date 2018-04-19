@@ -6,12 +6,12 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 19:38:20 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/17 20:32:19 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/19 12:06:55 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	sort_3(t_stack_node **a, t_stack_node **b)
+void	sort_3(t_stack_node **root)
 {
-	if ((*a)->data > (*a)->next->data)
-
+	if ((*a)->data > (*a)->next->next->data)
+		rot_l(root);
 }

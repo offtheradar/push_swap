@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   merge_sort.c                                       :+:      :+:    :+:   */
+/*   check_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 18:01:17 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/17 18:47:04 by ysibous          ###   ########.fr       */
+/*   Created: 2018/04/19 12:12:33 by ysibous           #+#    #+#             */
+/*   Updated: 2018/04/19 12:17:35 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	merge_sort(t_stack_node **a, int len_a)
+#include "../includes/push_swap.h"
+
+int		is_sorted(t_stack_node *root)
 {
-	int i;
-
-	i = 0;
-	while 
-}
-
-void	stack_len(t_stack_node *root)
-{
-	int len;
-
-	len = 0;
-	while ()
-}
-
-void	split_lst(t_stack_node **a, t_stack_node **b)
-{
-	int len;
-
-	len = stack_len(*a) / 2;
-	while (len)
+	while (root)
 	{
-		push_to_stack(a, b);
-		len--;
+		if (root->next && root->data >= root->next->data)
+			return (0);
+		root = root->next;
 	}
+	return (1);
+}
+
+int				is_empty(t_stack_node *root)
+{
+	return (!root);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse_command.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/16 19:16:06 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/19 10:00:10 by ysibous          ###   ########.fr       */
+/*   Created: 2018/04/19 10:00:39 by ysibous           #+#    #+#             */
+/*   Updated: 2018/04/19 10:10:23 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,6 @@ void	parse_command(char *command, t_stack_node **a, t_stack_node **b)
 		rot_r(b);
 }
 
-int		input_error(void)
-{
-	ft_putstr_fd("Error\n", 2);
-	exit(1);
-	return (0);
-}
-
 int		is_valid_command(char *command)
 {
 	if (ft_strcmp(command, "sa") == 0 || ft_strcmp(command, "ss") == 0 ||
@@ -51,30 +44,4 @@ int		is_valid_command(char *command)
 			|| (ft_strcmp(command, "rrr") == 0))
 		return (1);
 	return (input_error());
-}
-
-int main(int argc, char **argv)
-{
-	t_stack_node	*a;
-	t_stack_node	*b;
-	char			*buff;
-	int				i;
-
-	i = 1;
-	b = 0;
-	a = new_node(ft_atoi(argv[1]));
-	while (++i < argc)
-		push_to_end(new_node(ft_atoi(argv[i])), &a);
-	while (get_next_line(0, &buff) > 0 && (ft_strcmp(buff, "\n") != 0
-				&& ft_strcmp(buff, "\0") != 0) && is_valid_command(buff))
-	{
-		parse_command(buff, &a, &b);
-		free(buff);
-	}
-	if (is_sorted(a))
-		ft_putstr("OK\n");
-	else
-		ft_putstr("KO\n");
-	while (1){};
-	return (0);
 }
