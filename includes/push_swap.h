@@ -6,7 +6,7 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 16:29:59 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/17 16:36:43 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/19 12:35:33 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,21 @@ typedef struct	s_stack_node
 	struct s_stack_node *next;
 }				t_stack_node;
 
+/*
+****************************** Basic Stack *************************************
+*/
+
 t_stack_node	*new_node(int data);
 
-int				is_empty(t_stack_node *root);
+void			push_to_end(t_stack_node *new_l, t_stack_node **lst);
 
 void			push(t_stack_node **root, int data);
 
+int				pop(t_stack_node **root);
+
+/*
+****************************** Stack Operators *********************************
+*/
 void			push_to_stack(t_stack_node **src, t_stack_node **dst);
 
 void			swap(t_stack_node **root);
@@ -34,7 +43,22 @@ void			rot_l(t_stack_node **root);
 
 void			rot_r(t_stack_node **root);
 
-void			push_to_end(t_stack_node *new_l, t_stack_node **lst);
+/*
+******************************* Check Stack ************************************
+*/
 
 int				is_sorted(t_stack_node *root);
+
+int				is_empty(t_stack_node *root);
+
+/*
+******************************** Parse Input **********************************
+*/
+
+void			parse_command(char *command, t_stack_node **a,
+								t_stack_node **b);
+
+int				is_valid_command(char *command);
+
+int				input_error(void);
 #endif

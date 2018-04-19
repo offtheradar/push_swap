@@ -6,11 +6,11 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 12:12:15 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/19 12:20:21 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/19 12:37:07 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_stack_node	*new_node(int data)
 {

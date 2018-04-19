@@ -6,11 +6,18 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 10:00:39 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/19 10:10:23 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/19 12:34:24 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+int		input_error(void)
+{
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
+	return (0);
+}
 
 void	parse_command(char *command, t_stack_node **a, t_stack_node **b)
 {

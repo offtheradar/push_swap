@@ -6,11 +6,11 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 12:12:33 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/19 12:17:35 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/19 12:38:27 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 int		is_sorted(t_stack_node *root)
 {
