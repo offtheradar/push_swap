@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_3.c                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 19:38:20 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/19 17:57:49 by ysibous          ###   ########.fr       */
+/*   Created: 2018/04/16 19:16:06 by ysibous           #+#    #+#             */
+/*   Updated: 2018/04/19 21:25:21 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sort_3(t_stack_node **root)
+void	print_stack(t_stack_node *root)
 {
-	if (is_sorted(*root) || !(*root)->next)
-		return ;
-	if ((*root)->next && !(*root)->next->next)
+	while (root)
 	{
-		if ((*root)->data > (*root)->next->data)
-			rot_l(root);
-		return ;
+		ft_putnbr(root->data);
+		root = root->next;
 	}
-	if ((*root)->data > (*root)->next->next->data && (*root)->data >
-			(*root)->next->data && (*root))
-		rot_l(root);
-	if (())
+}
+int main(int argc, char **argv)
+{
+	t_stack_node	*a;
+	t_stack_node	*b;
+	int				i;
 
+	i = 0;
+	a = 0;
+	b = 0;
+	while (++i < argc)
+	{
+		if (!is_int(argv[i]))
+			return (input_error());
+		push_to_end(new_node(ft_atoi(argv[i])), &a);
+	}
+	ft_putnbr(find_median(a));
+	if (is_sorted(a))
+		ft_putstr("OK\n");
+	else
+		ft_putstr("KO\n");
+	while (1){};
+	return (0);
 }
