@@ -6,7 +6,7 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 12:12:15 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/19 12:37:07 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/19 21:15:42 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void			push_to_end(t_stack_node *new_l, t_stack_node **lst)
 {
 	t_stack_node *curr;
 
-	if (!new_l || !lst)
+	if (!new_l)
 		return ;
 	if (!*lst)
 		*lst = new_l;

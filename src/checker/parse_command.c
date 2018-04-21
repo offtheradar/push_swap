@@ -6,7 +6,7 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 10:00:39 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/19 12:34:24 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/19 20:30:45 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,22 @@ int		input_error(void)
 	return (0);
 }
 
+int		is_int(char *str)
+{
+	while (WHITESPACE(*str))
+		str++;
+	if (*str == '+' || *str == '-')
+		str++;
+	if (!str || !(*str))
+		return (0);
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
+}
 void	parse_command(char *command, t_stack_node **a, t_stack_node **b)
 {
 	if (ft_strcmp(command, "sa") == 0 || ft_strcmp(command, "ss") == 0)

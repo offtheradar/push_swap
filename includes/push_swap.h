@@ -6,7 +6,7 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 16:29:59 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/19 12:35:33 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/19 21:18:42 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int				is_sorted(t_stack_node *root);
 int				is_empty(t_stack_node *root);
 
 /*
-******************************** Parse Input **********************************
+******************************** Parse Input ***********************************
 */
 
 void			parse_command(char *command, t_stack_node **a,
@@ -61,4 +61,12 @@ void			parse_command(char *command, t_stack_node **a,
 int				is_valid_command(char *command);
 
 int				input_error(void);
+
+int				is_int(char *str);
+
+/*
+********************************** Sorting *************************************
+*/
+
+int				find_median(t_stack_node *root);
 #endif
