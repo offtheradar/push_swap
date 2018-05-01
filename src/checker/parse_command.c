@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_command.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 10:00:39 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/19 20:30:45 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/30 18:48:53 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ int		is_int(char *str)
 	}
 	return (1);
 }
+
 void	parse_command(char *command, t_stack_node **a, t_stack_node **b)
 {
 	if (ft_strcmp(command, "sa") == 0 || ft_strcmp(command, "ss") == 0)
 		swap(a);
-	if (ft_strcmp(command, "sb") == 0|| ft_strcmp(command, "sb") == 0)
+	if (ft_strcmp(command, "sb") == 0 || ft_strcmp(command, "sb") == 0)
 		swap(b);
 	if (ft_strcmp(command, "pa") == 0)
 		push_to_stack(b, a);
@@ -51,7 +52,7 @@ void	parse_command(char *command, t_stack_node **a, t_stack_node **b)
 		rot_l(b);
 	if (ft_strcmp(command, "rra") == 0 || ft_strcmp(command, "rrr") == 0)
 		rot_r(a);
-	if (ft_strcmp(command, "rrb") == 0|| ft_strcmp(command, "rrr") == 0)
+	if (ft_strcmp(command, "rrb") == 0 || ft_strcmp(command, "rrr") == 0)
 		rot_r(b);
 }
 

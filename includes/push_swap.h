@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 16:29:59 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/19 21:18:42 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/30 20:01:48 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,6 @@ int				is_int(char *str);
 */
 
 int				find_median(t_stack_node *root);
+
+void			sort_3(t_stack_node **root);
 #endif

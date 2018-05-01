@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 19:16:06 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/19 21:25:21 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/30 20:02:02 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,7 @@ int main(int argc, char **argv)
 			return (input_error());
 		push_to_end(new_node(ft_atoi(argv[i])), &a);
 	}
-	ft_putnbr(find_median(a));
-	if (is_sorted(a))
-		ft_putstr("OK\n");
-	else
-		ft_putstr("KO\n");
-	while (1){};
+	sort_3(&a);
+	print_stack(a);
 	return (0);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ysibous <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/19 12:40:43 by ysibous           #+#    #+#              #
-#    Updated: 2018/04/19 21:26:43 by ysibous          ###   ########.fr        #
+#    Updated: 2018/04/30 20:02:24 by ysibous          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS = -Wall -Wextra -Werror -o
 
 FILES = main.c
 FILES += sort.c
+FILES += sort_3.c
 FILES += ../stack/stack.c
 FILES += ../stack/basic_stack_ops.c
 FILES += ../stack/check_stack.c
