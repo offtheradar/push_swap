@@ -6,7 +6,7 @@
 /*   By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 16:29:59 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/30 20:01:48 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/04/30 20:28:52 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 typedef struct	s_stack_node
 {
-	int data;
+	int					data;
 	struct s_stack_node *next;
 }				t_stack_node;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 17:07:03 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/21 15:20:42 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/05/01 20:33:33 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,32 @@ int			stack_len(t_stack_node *root)
 	return (len);
 }
 
-void		swap_data(t_stack_node **first, t_stack_node **snd)
+void		swap_data(t_stack_node *first, t_stack_node *snd)
 {
 	int tmp;
 
-	tmp = (*first)->data;
-	(*first)->data = (*snd)->data;
-	(*snd)->data = tmp;
+	tmp = (first)->data;
+	(first)->data = (snd)->data;
+	(snd)->data = tmp;
 }
 
 int			find_median(t_stack_node *root)
 {
-	int len;
-	t_stack_node *head;
+	int				len;
+	t_stack_node	*head;
 
 	head = root;
 	len = stack_len(root) / 2;
-	while (root)
+	if (!root)
+		exit(1);
+	while (root->next)
 	{
-		if (root->next && root->data > root->next->data)
+		if (root->next && (root->data > root->next->data))
 		{
-			swap_data(&root, &(root->next));
+			swap_data(root, (root->next));
 			root = head;
 		}
+		else
 			root = root->next;
 	}
 	root = head;
@@ -75,50 +78,77 @@ int			find_median(t_stack_node *root)
 // Substract the number of elements sorted from left_to_sort
 // loop
 
-/*
-void		sort_stack(t_stack_node **a, t_stack_node **b)
+
+void		sort_stack_a(t_stack_node **a, t_stack_node **b
+							int size, int x, int y)
 {
 	int median;
-	int	left_to_sort;
-	int	pushed_to_a;
-	int count_b;
-	int i;
+	int push;
 
-	i = 0;
-	count_b = 0;
-	median = find_median(*a);
-	left_to_sort = len_a;
-	while (left_to_sort)
+	push = 0;
+	if (is_sorted(a));
+		return ;
+	else
 	{
-		median = find_median(*a);
-		while (i < len_a)
+		median = find_median(*a, size);
+		while (x < size)
 		{
-			if ((*a)->data <= median)
+			if ((*a)->data < median)
 			{
 				push_to_stack(a, b);
-				count_b++;
+				push++;
 			}
 			else
 				rot_l(a);
 		}
-		if (count_b > 3)
+		while (y < (size - push))
 		{
-			median = find_median(b);
-			while (count_b > 3)
-			{
-				if ((*b)->data > median)
-				{
-					push_to_stack(b, a);
-					pushed_to_a += 1;
-					count_b--;
-				}
-				else
-					rot_l(b);
-			}
+			rot_r(a)
+			y++;
 		}
-		else
-			sort_3(b);
-		left_to_sort -= count_b;
+		sort_stack_b(a, b, push, 0, 0);
 	}
+	return ;
 }
-*/
+
+void		sort_stack_b(t_stack_node **a, t_stack_node **b
+							int size, int x, int y)
+{
+	int median;
+	int push;
+	int i;
+
+	i = 0;
+	push = 0;
+	if (size <= 3)
+	{
+		sort_3(b);
+		while (*b)
+		{
+			push++;
+			push_to_stack(b, a);
+		}
+		while (i < push)
+		{
+			rot_l(a);
+			i++;
+		}
+		sort_stack_a(a, b,  stack_size - push, 0, 0);
+	}
+	else
+	{
+		median = find_median(*b, size);
+		while (x < size)
+		{
+			if ((*b)->data > median)
+			{
+				push_to_stack(b, a);
+				push++;
+			}
+			else
+				rot_l(b);
+		}
+		sort_stack_b(a, b, size - push, 0, 0);
+	}
+	return ;
+}

@@ -6,11 +6,12 @@
 /*   By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 19:16:06 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/30 20:02:02 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/05/01 17:22:41 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+#include <stdio.h>
 
 void	print_stack(t_stack_node *root)
 {
@@ -20,6 +21,7 @@ void	print_stack(t_stack_node *root)
 		root = root->next;
 	}
 }
+
 int main(int argc, char **argv)
 {
 	t_stack_node	*a;
@@ -36,6 +38,9 @@ int main(int argc, char **argv)
 		push_to_end(new_node(ft_atoi(argv[i])), &a);
 	}
 	sort_3(&a);
+		print_stack(a);
+		printf("the medin is %d", find_median(a));
 	print_stack(a);
+
 	return (0);
 }
