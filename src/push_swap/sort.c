@@ -6,11 +6,14 @@
 /*   By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 17:07:03 by ysibous           #+#    #+#             */
-/*   Updated: 2018/05/01 20:33:33 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/05/01 21:25:32 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+void		sort_stack_b(t_stack_node **a, t_stack_node **b,
+							int size, int x, int size_a);
 
 int			stack_len(t_stack_node *root)
 {
@@ -34,16 +37,17 @@ void		swap_data(t_stack_node *first, t_stack_node *snd)
 	(snd)->data = tmp;
 }
 
-int			find_median(t_stack_node *root)
+int			find_median(t_stack_node *root, int size)
 {
 	int				len;
 	t_stack_node	*head;
 
-	head = root;
-	len = stack_len(root) / 2;
+
 	if (!root)
 		exit(1);
-	while (root->next)
+	head = root;
+	len = size / 2;
+	while (root->next && size)
 	{
 		if (root->next && (root->data > root->next->data))
 		{
@@ -52,6 +56,7 @@ int			find_median(t_stack_node *root)
 		}
 		else
 			root = root->next;
+		size--;
 	}
 	root = head;
 	while (len)
@@ -79,14 +84,16 @@ int			find_median(t_stack_node *root)
 // loop
 
 
-void		sort_stack_a(t_stack_node **a, t_stack_node **b
-							int size, int x, int y)
+void		sort_stack_a(t_stack_node **a, t_stack_node **b,
+							int size, int x, int size_a)
 {
 	int median;
 	int push;
+	int i;
 
 	push = 0;
-	if (is_sorted(a));
+	i = 0;
+	if (is_sorted(*a))
 		return ;
 	else
 	{
@@ -100,19 +107,22 @@ void		sort_stack_a(t_stack_node **a, t_stack_node **b
 			}
 			else
 				rot_l(a);
+			x++;
 		}
-		while (y < (size - push))
+		while (i < (size - push))
 		{
-			rot_r(a)
-			y++;
+			rot_r(a);
+			i++;
 		}
-		sort_stack_b(a, b, push, 0, 0);
+		print_stack(*a, 'a');
+		print_stack(*b, 'b');
+		sort_stack_b(a, b, push, 0, size_a);
 	}
 	return ;
 }
 
-void		sort_stack_b(t_stack_node **a, t_stack_node **b
-							int size, int x, int y)
+void		sort_stack_b(t_stack_node **a, t_stack_node **b,
+							int size, int x, int size_a)
 {
 	int median;
 	int push;
@@ -133,7 +143,7 @@ void		sort_stack_b(t_stack_node **a, t_stack_node **b
 			rot_l(a);
 			i++;
 		}
-		sort_stack_a(a, b,  stack_size - push, 0, 0);
+		sort_stack_a(a, b,  size_a - push, 0, size_a);
 	}
 	else
 	{
@@ -143,12 +153,24 @@ void		sort_stack_b(t_stack_node **a, t_stack_node **b
 			if ((*b)->data > median)
 			{
 				push_to_stack(b, a);
-				push++;
+				i++;
+				size_a++;
 			}
 			else
 				rot_l(b);
+			x++;
 		}
-		sort_stack_b(a, b, size - push, 0, 0);
+		print_stack(*a, 'a');
+		print_stack(*b, 'b');
+		sort_stack_b(a, b, size - i, 0, size_a);
 	}
 	return ;
+}
+
+void	sort_stack(t_stack_node **a, t_stack_node **b)
+{
+	int size_a;
+
+	size_a = stack_size(*a);
+	sort_stack_a(a, b, size_a, 0, size_a);
 }

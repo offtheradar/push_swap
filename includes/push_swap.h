@@ -6,7 +6,7 @@
 /*   By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 16:29:59 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/30 20:28:52 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/05/01 21:25:15 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,13 @@ int				is_int(char *str);
 ********************************** Sorting *************************************
 */
 
-int				find_median(t_stack_node *root);
+int				find_median(t_stack_node *root, int size);
 
 void			sort_3(t_stack_node **root);
+
+void			sort_stack(t_stack_node **a, t_stack_node **b);
+
+void	print_stack(t_stack_node *root, char c);
+
+int				stack_size(t_stack_node *root);
 #endif
