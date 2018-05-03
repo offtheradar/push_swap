@@ -6,7 +6,7 @@
 /*   By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 19:38:20 by ysibous           #+#    #+#             */
-/*   Updated: 2018/04/30 20:00:25 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/05/02 18:02:35 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ void	sort_3(t_stack_node **root)
 		return ;
 	else if ((*root)->next && !(*root)->next->next)
 	{
-		if ((*root)->data > (*root)->next->data)
+		if ((*root)->data < (*root)->next->data)
 			rot_l(root);
 		return ;
 	}
-	else if ((*root)->data < (*root)->next->data)
+	else if ((*root)->data > (*root)->next->data)
 	{
-		if ((*root)->next->next->data < (*root)->next->data)
+		if ((*root)->next->next->data > (*root)->next->data)
 		{
-			if ((*root)->next->next->data < (*root)->data)
+			if ((*root)->next->next->data > (*root)->data)
 				rot_r(root);
 			else
 			{
@@ -35,9 +35,9 @@ void	sort_3(t_stack_node **root)
 			}
 		}
 	}
-	else if ((*root)->next->data < (*root)->next->next->data)
+	else if ((*root)->next->data > (*root)->next->next->data)
 	{
-		if ((*root)->next->next->data < (*root)->data)
+		if ((*root)->next->next->data > (*root)->data)
 			rot_l(root);
 		else
 			swap(root);
