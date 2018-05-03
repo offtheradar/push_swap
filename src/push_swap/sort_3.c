@@ -6,7 +6,7 @@
 /*   By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 19:38:20 by ysibous           #+#    #+#             */
-/*   Updated: 2018/05/02 18:02:35 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/05/02 21:10:17 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	sort_3(t_stack_node **root)
 {
+	if (!(root) || !(*root))
+		return ;
 	if (is_sorted(*root) || !(*root)->next)
 		return ;
 	else if ((*root)->next && !(*root)->next->next)

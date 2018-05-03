@@ -6,7 +6,7 @@
 /*   By: ysibous <ysibous@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 19:16:06 by ysibous           #+#    #+#             */
-/*   Updated: 2018/05/02 13:08:47 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/05/02 21:32:25 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	print_stack(t_stack_node *a, t_stack_node *b)
 	ft_putchar('\n');
 }
 
-
 void delay(int number_of_seconds)
 {
     // Converting time into milli_seconds
@@ -71,12 +70,8 @@ int main(int argc, char **argv)
 			return (input_error());
 		push_to_end(new_node(ft_atoi(argv[i])), &a);
 	}
-	//sort_3(&a);
-		//print_stack(a);
-		//printf("the medin is %d", find_median(a));
-
 	sort_stack(&a, &b);
-	//print_stack(a);
+	print_stack(a, b);
 
 	return (0);
 }
